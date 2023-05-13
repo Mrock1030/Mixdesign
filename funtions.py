@@ -51,8 +51,8 @@ def resitence_of_fc(fc):
 def unit_converter(fuerza,dict_unit,unidad):
 
     if unidad[0:1].upper() and unidad[1::]in dict_unit:
-        c1= unit[unidad[0:1]]
-        c2 = unit[unidad[1::]]
+        c1= dict_unit[unidad[0:1]]
+        c2 = dict_unit[unidad[1::]]
         
     elif unidad in dict_unit:
         c1=1
@@ -65,13 +65,15 @@ def unit_converter(fuerza,dict_unit,unidad):
 
 
 #funcion de  interpolacion de datos en diccinarios 
+
 def interpolation(dictionary, keys, expo):
         if keys  in dictionary:
             return dictionary[keys][expo]
         else:
             sorted_keys = sorted(dictionary.keys())
             if keys < sorted_keys[0] or keys > sorted_keys[-1]:
-                return None  # error, key is out of range.
+                return print("Ingresaste un dato fuera de rango") 
+                # error, key is out of range.
             
             for i in range(len(sorted_keys) - 1):
                 if keys >= sorted_keys[i] and keys <= sorted_keys[i + 1]:
