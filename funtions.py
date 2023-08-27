@@ -70,11 +70,13 @@ def interpolation(dictionary, keys, expo):
         if keys  in dictionary:
             return dictionary[keys][expo]
         else:
+            #se organizan las key de mayo a menor
             sorted_keys = sorted(dictionary.keys())
+            #se organizan 
             if keys < sorted_keys[0] or keys > sorted_keys[-1]:
+            #se pone el condicional en caso de que 
                 return print("Ingresaste un dato fuera de rango") 
                 # error, key is out of range.
-            
             for i in range(len(sorted_keys) - 1):
                 if keys >= sorted_keys[i] and keys <= sorted_keys[i + 1]:
                     x1, x2 = sorted_keys[i], sorted_keys[i + 1]
@@ -93,7 +95,7 @@ def interpolation_added_end(dictionary,nominal,module):
             sorted_values = sorted(dictionary[nominal].keys())
             #en caso de que el valor este por fuera de los limites
             if module < sorted_values[0] or module>sorted_values[-1]:
-                return  print("Sua valor esta fuera del rango ")
+                return  print("Su valor esta fuera del rango ")
             #
             for x in range(len(sorted_values)-1):
                 if module >= sorted_values[x] and sorted_values[x+1]:
@@ -104,4 +106,13 @@ def interpolation_added_end(dictionary,nominal,module):
                     return y1 + (y2 - y1) * ((module - x1) / (x2 - x1))
     else:
         print("valor incorrecto")
+
+#funcion para tomar solo los dos primeros decimales
+def ignoradecimales(decimal):
+    
+    decimal = str(decimal)
+    decimal_part = decimal[0:(decimal.find(".")+3)]
+    decimal = float(decimal_part)  
+    return decimal
+     
  

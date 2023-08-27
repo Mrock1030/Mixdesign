@@ -13,6 +13,12 @@ def main():
         press = None
         while True:
             #datos de agregado grueso.
+            #limpia la pantalla
+            print("\n" *80)
+            print("Cargando datos de agregado Grueso")
+            time.sleep(2)
+            print("\n" *80)
+            
             print("\t Datos Agregado Grueso \t\n")
             try:
                
@@ -39,6 +45,10 @@ def main():
         
         #limpia la pantalla
         print("\n" *80)
+        print("Cargando datos de agregado Grueso")
+        time.sleep(2)
+        print("\n" *80)
+        
         
         #Datos de agregado fino.
         print("\t Datos Agregado Fino \t\n")
@@ -87,10 +97,9 @@ def main():
         while True:
             try:
                 aire_incluido= int(input("""
-            
-                        [1] Aire incluido
-                        [2] Sin Aire incluido  
-                        >>>"""))
+                [1] Aire incluido
+                [2] Sin Aire incluido  
+                >>>"""))
                 if aire_incluido == 1:
                     condition = "concreto con aire incluido"
                     break
@@ -103,18 +112,14 @@ def main():
                 print("Volviendo al menu")
                 time.sleep(2)
                 
-        #relacion agua cemento        
-        ram = funtions.interpolation(compressive_strength, fc, condition)
-        
-                
-                                    
-                
-                                   
+        #relacion agua cemento
+        #solamente tomamos los dos preimeros decimales despues del cero.       
+        ram = funtions.interpolation(data.compressive_strength, fc, condition)
+        ram =funtions.ignoradecimales(ram)
+                                  
     #opcion de menu de inicio 
     elif menu == 2:
         print("Cerrando programa...")
         time.sleep(2)
-        exit()
-        
-        
+        exit()       
 main()
