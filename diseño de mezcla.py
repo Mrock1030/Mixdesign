@@ -1,10 +1,10 @@
-import time
-import data
-import funtions
+import time 
+from data import * 
+from funtions import *
 
 #funcion principal    
 def main():
-    funtions.welcome()
+    welcome()
     menu = int(input("""
     [1] Diseñar una Mezcla en hormigon
     [2] Salir  
@@ -27,9 +27,9 @@ def main():
                 humedad_ag = float(input("Ingrese" "% " "de humedad: "))
                 abosorcion_ag = float(input("Ingrese" "% " "de absorcion: "))
                 muc_ag  = float(input("Ingrese MUC: "))
-                muc_ag= funtions.unit_converter(muc_ag,data.dict_unit,funtions.menu_unidades())
+                muc_ag= unit_converter(muc_ag,dict_unit,menu_unidades())
                 mus_ag  = float(input("Ingrese MUS: "))
-                mus_ag= funtions.unit_converter(mus_ag, data.dict_unit,funtions.menu_unidades() )
+                mus_ag= unit_converter(mus_ag,dict_unit,menu_unidades() )
                  #limpia la pantalla
                 print("\n" *80)
                 print("Cargando datos de agregado fino")
@@ -59,9 +59,9 @@ def main():
                 humedad_af = float(input("Ingrese" "% " "de humedad: "))
                 abosorcion_af = float(input("Ingrese" "% " "de absorcion: "))
                 muc_af  = float(input("Ingrese MUC: "))
-                muc_af= funtions.unit_converter(muc_af,data.dict_unit,funtions.menu_unidades())
+                muc_af= unit_converter(muc_af,dict_unit,menu_unidades())
                 mus_af  = float(input("Ingrese MUS: "))
-                mus_af= funtions.unit_converter(mus_af, data.dict_unit,funtions.menu_unidades() )
+                mus_af= unit_converter(mus_af, dict_unit,menu_unidades() )
                 print("\n" *80)
                 
                 print("Cargando datos de cemento\n")
@@ -83,10 +83,10 @@ def main():
         while True:
             try:
                 cemento = float(input("Ingrese la densidad del cemento: " ))
-                cemento=funtions.unit_converter(cemento,data.dict_unit,funtions.menu_unidades() )
+                cemento=unit_converter(cemento,dict_unit,menu_unidades() )
                 fc = int(input("Ingrese la resistencia especificada: "))
-                fc = funtions.unit_converter(fc, data.dict_unit,funtions.menu_unidades())
-                fc = funtions.resitence_of_fc(fc)
+                fc = unit_converter(fc,dict_unit,menu_unidades())
+                fc = resitence_of_fc(fc)
                 break
         #except     
             except ValueError as error:
@@ -114,8 +114,8 @@ def main():
                 
         #relacion agua cemento
         #solamente tomamos los dos preimeros decimales despues del cero.       
-        ram = funtions.interpolation(data.compressive_strength, fc, condition)
-        ram =funtions.ignoradecimales(ram)
+        ram = interpolation(compressive_strength, fc, condition)
+        ram =ignoradecimales(ram)
                                   
     #opcion de menu de inicio 
     elif menu == 2:
