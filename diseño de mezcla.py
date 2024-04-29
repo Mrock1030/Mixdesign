@@ -27,9 +27,9 @@ def main():
                 humedad_ag = float(input("Ingrese" "% " "de humedad: "))
                 abosorcion_ag = float(input("Ingrese" "% " "de absorcion: "))
                 muc_ag  = float(input("Ingrese MUC: "))
-                muc_ag= unit_converter(muc_ag,dict_unit,menu_unidades())
+                muc_ag= unit_converter(muc_ag,dict_unit_presion,menu_unidades())
                 mus_ag  = float(input("Ingrese MUS: "))
-                mus_ag= unit_converter(mus_ag,dict_unit,menu_unidades() )
+                mus_ag= unit_converter(mus_ag,dict_unit_presion,menu_unidades() )
                  #limpia la pantalla
                 print("\n" *80)
                 print("Cargando datos de agregado fino")
@@ -59,9 +59,9 @@ def main():
                 humedad_af = float(input("Ingrese" "% " "de humedad: "))
                 abosorcion_af = float(input("Ingrese" "% " "de absorcion: "))
                 muc_af  = float(input("Ingrese MUC: "))
-                muc_af= unit_converter(muc_af,dict_unit,menu_unidades())
+                muc_af= unit_converter(muc_af,dict_unit_presion,menu_unidades())
                 mus_af  = float(input("Ingrese MUS: "))
-                mus_af= unit_converter(mus_af, dict_unit,menu_unidades() )
+                mus_af= unit_converter(mus_af, dict_unit_presion,menu_unidades() )
                 print("\n" *80)
                 
                 print("Cargando datos de cemento\n")
@@ -85,7 +85,7 @@ def main():
                 cemento = float(input("Ingrese la densidad del cemento: " ))
                 cemento=unit_converter(cemento,dict_unit,menu_unidades() )
                 fc = int(input("Ingrese la resistencia especificada: "))
-                fc = unit_converter(fc,dict_unit,menu_unidades())
+                fc = unit_converter(fc,dict_unit_presion,menu_unidades())
                 fc = resitence_of_fc(fc)
                 break
         #except     
