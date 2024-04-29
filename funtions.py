@@ -22,6 +22,9 @@ def menu_unidades():
         print("¡INGRESASTE UN DATO ERRONEO !")
         menu_unidades = int(input(">>>"))  
         
+    #hacemos un print para limpiar pantalla
+    print("\n" *80)    
+    
     if menu_unidades == 1:
         return "Mpa"
     elif menu_unidades == 2:
@@ -34,6 +37,7 @@ def menu_unidades():
         return "psi"
     elif menu_unidades == 6:
         return "kg/cm2"
+
 
 #funcion de resistencia a la compresion
 def resitence_of_fc(fc):
@@ -48,20 +52,20 @@ def resitence_of_fc(fc):
 #esta funcion revisa que unidad este dentro del dict
 #y si esta toma la posicion de esas variables en el dict
 
-def unit_converter(fuerza,dict_unit,unidad):
+def unit_converter(u_convertir,dict_unit_presion,unidad):
 
     if unidad[0:1].upper() and unidad[1::]in dict_unit:
-        c1= dict_unit[unidad[0:1]]
-        c2 = dict_unit[unidad[1::]]
+        unidad1= dict_unit[unidad[0:1]]
+        unidad2 = dict_unit[unidad[1::]]
         
     elif unidad in dict_unit:
-        c1=1
-        c2 = dict_unit[unidad]
+        unidad1 = 1
+        unidad2 = dict_unit[unidad]
         
     else:
         print("Revisar unidades ingresadas")
-    fuerza = fuerza*c1*c2
-    return fuerza
+    unidad_convertidad = u_convertir*unidad1*unidad2
+    return unidad_convertidad
 
 
 #funcion de  interpolacion de datos en diccinarios 
