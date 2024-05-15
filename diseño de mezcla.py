@@ -22,7 +22,8 @@ def main():
             print("\t Datos Agregado Grueso \t\n")
             try:
                
-                tmn = float(input("Ingrese TMN en pulgadas: " ))
+                tmn=float(input("Ingrese Tamaño maximo nominal:" ))
+                tmn = unit_converter_metricas(tmn,dict_unit_medidas,menu_unidades_metricas())
                 d_aparente_ag = float(input("Ingrese Densidad aparente: "))
                 humedad_ag = float(input("Ingrese" "% " "de humedad: "))
                 abosorcion_ag = float(input("Ingrese" "% " "de absorcion: "))
@@ -83,7 +84,7 @@ def main():
         while True:
             try:
                 cemento = float(input("Ingrese la densidad del cemento: " ))
-                cemento=unit_converter(cemento,dict_unit,menu_unidades() )
+                cemento=unit_converter(cemento,dict_unit_presion,menu_unidades() )
                 fc = int(input("Ingrese la resistencia especificada: "))
                 fc = unit_converter(fc,dict_unit_presion,menu_unidades())
                 fc = resitence_of_fc(fc)

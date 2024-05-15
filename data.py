@@ -1,9 +1,11 @@
 ####Datos del programa###
 
 
-#diccinario de unidades
-dict_unit = { "M":10e6,"K":1000,"D":10,"pa":1.0197e-5,"psi":0.070307,"kg/cm2":1
-}
+#diccinario de unidades de presion
+dict_unit_presion  = { "M":10e6,"K":1000,"D":10,"pa":1.0197e-5,"psi":0.070307,"kg/cm2":1}
+
+#diccioanrio de unidades de medidas
+dict_unit_medidas = { "m":1e2,"pulg":2.54,"cm":1}
 
 #asentaminetos
 settlement = {
